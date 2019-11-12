@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class AverageGrade {
     public static void obliczanieSredniej(int[][] oceny){
         float suma = 0F;
-        int iloscOcen = 0;
+        float srednia=0F;
+        float sumasrednich=0F;
         for (int i = 0; i < oceny.length; i++){
             for (int j = 0; j < oceny[i].length; j++) {
-                iloscOcen++;
                 suma=oceny[i][j]+suma;
             }
-
+            srednia=suma/oceny[i].length;
+            System.out.println("Średnia z " + i + " przedmiotu wynosi: " + srednia);
+            sumasrednich=sumasrednich+srednia;
+            suma=0F;
         }
-        float srednia = (float) suma / iloscOcen;
-        System.out.println("Suma: " + suma);
-        System.out.println("Ilość ocen: " + iloscOcen);
-        System.out.println("Średnia: " + srednia);
-        System.out.println("Średnia ocen wynosi " + (suma / iloscOcen));
+        System.out.println("Średnia przedmiotów wynosi: " + (sumasrednich/4));
+
     }
 
     public static void main (String[] args){
